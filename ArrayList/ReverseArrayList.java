@@ -26,7 +26,7 @@ public class ReverseArrayList
 		for(int i=0; i<(al.size()/2); i++)
 		{
 			int temp = al.get(i);
-			al.set(i, al.get((al.size()-i-1)));
+			al.set(i, al.get(al.size()-i-1));
 			al.set((al.size()-i-1), temp);
 		}
 		
