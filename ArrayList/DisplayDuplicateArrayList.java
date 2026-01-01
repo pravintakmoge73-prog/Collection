@@ -19,9 +19,9 @@ public class DisplayDuplicateArrayList
 		al.add(6);
 		al.add(3);
 		al.add(8);
-		
+
 		System.out.println(al);
-		
+
 		for(int i=0; i<al.size(); i++)
 		{
 			boolean flag = false;
@@ -42,9 +42,9 @@ public class DisplayDuplicateArrayList
 }
 
 /*
-if input ArrayList has element repeated more than 2 
+if input ArrayList has element repeated more than 2
 then above logic not work
-like 2 3 2 6 5 2 8 here 2 comes thrice while printing 
+like 2 3 2 6 5 2 8 here 2 comes thrice while printing
 duplicate value using above logic it print in output 22
 
 	for(int i=0; i<al.size())
@@ -57,12 +57,12 @@ duplicate value using above logic it print in output 22
 				visit=true;
 			}
 		}
-		
+
 		if(visit)
 		{
 			continue;
 		}
-		
+
 		boolean isDuplicate = false;
 		for(int k=i+1; k<al.size(); k++)
 		{
