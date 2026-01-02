@@ -12,32 +12,72 @@ public class SpiralMatrix
 	public static void  main(String[] args)
 	{
 		Scanner sc =new Scanner(System.in);
-
-		ArrayList<int[]> matrix = new ArrayList<>();
-
+		
+		int[][] matrix = new int[3][3];
 		System.out.println("Enter element in 3*3 Matrix :");
-		for(int i=0; i<3; i++)
+		int n=3;
+		for(int i=0; i<n; i++)
 		{
-			int[] row=new int[3];
-			for(int j=0; j<3; j++)
+			for(int j=0; j<n; j++)
 			{
-				row[j] = sc.nextInt();
+				matrix[i][j]=sc.nextInt();
 			}
-			matrix.add(row);
 		}
-		System.out.println("Matrix Element :");
-		for(int[] row : matrix)
+		
+		System.out.println("--------------------");
+		
+		System.out.println("Matrix is :");
+		for(int i=0; i<n; i++)
 		{
-			System.out.println(Arrays.toString(row));
+			System.out.print("[");
+			for(int j=0; j<n; j++)
+			{
+				System.out.print(matrix[i][j]+", ");
+			}
+			System.out.print("]");
+			System.out.println();
 		}
+		
+		ArrayList<Integer> result = new ArrayList<>();
+		
+		int top = 0;
+        int bottom = n - 1;
+        int left = 0;
+        int right = n - 1;
+		while(top<=bottom && left<=right)
+		{
+			 // Left → Right
+            for (int j = left; j <= right; j++) {
+                result.add(matrix[top][j]);
+            }
+            top++;
 
-		System.out.println("Spiral Matrix :");
-		for(int i=0; i<matrix.size(); i++)
-		{
-			while(i<matrix.size())
-			{
-				System.out.println(Arrays.toString(matrix.get(i)));
+            // Top → Bottom
+            if (top <= bottom && left <= right) {
+                for (int i = top; i <= bottom; i++) {
+                    result.add(matrix[i][right]);
+                }
+                right--;
+            }
+
+            // Right → Left
+            if (top <= bottom && left <= right) {
+                for (int j = right; j >= left; j--) {
+                    result.add(matrix[bottom][j]);
+                }
+                bottom--;
+            }
+
+            // Bottom → Top
+            if (top <= bottom && left <= right) {
+                for (int i = bottom; i >= top; i--) {
+                    result.add(matrix[i][left]);
+                }
+                left++;
 			}
 		}
+		
+		System.out.println("Spiral Order :");
+		System.out.println(result);
 	}
 }
