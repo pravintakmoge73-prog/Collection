@@ -16,6 +16,12 @@ public class StringContainSubstring
 		System.out.println("Enter String to check is subString of Main String :");
 		String s = sc.nextLine();
 		ck.isContainSub(original,s);
+		/* 
+		if (original.contains(s)) {
+			System.out.println("Substring found");
+        } else {
+            System.out.println("Substring not found");
+        }*/
 		
 	}
 }
