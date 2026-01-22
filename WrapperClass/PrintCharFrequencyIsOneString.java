@@ -25,12 +25,14 @@ class PrintCharFrequencyIsOneString
 		}
 		
 		System.out.println("Characters whose Frequency is 1 :");
+		//bollean found = false;
 		Set<Map.Entry<Character, Integer>> data = map.entrySet();
-		for(Map.Entry e :data)
+		for(Map.Entry<Character, Integer> e :data)
 		{
-			if((int)e.getValue()==1)
+			if(e.getValue()==1)
 			{
 				System.out.print(e.getKey()+" ");
+				//found = true;
 				//break; if string i/p is single word like in question 
 				//tha contain only one char with fre=1
 			}
