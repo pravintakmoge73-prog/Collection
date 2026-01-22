@@ -31,6 +31,8 @@ class PrintCharFrequencyIsOneString
 			if((int)e.getValue()==1)
 			{
 				System.out.print(e.getKey()+" ");
+				//break; if string i/p is single word like in question 
+				//tha contain only one char with fre=1
 			}
 		}
 	}
