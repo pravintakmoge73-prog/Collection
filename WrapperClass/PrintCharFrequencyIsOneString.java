@@ -1,0 +1,37 @@
+/*Q28. Write a java program to Check character whose frequency is 1 and appears first.
+ Input : swiss
+ Output : w
+*/
+
+import java.util.*;
+class PrintCharFrequencyIsOneString
+{
+	public static void main(String[] args)
+	{
+		Scanner sc =new Scanner(System.in);
+		
+		System.out.println("Enter String Input");
+		String input = sc.nextLine();
+		
+		String s = input.toLowerCase();
+		
+		char[] array = s.toCharArray();
+		
+		Map<Character, Integer> map = new LinkedHashMap<>();
+		
+		for(char ch : array)
+		{
+			map.put(ch, map.getOrDefault(ch,0)+1);
+		}
+		
+		System.out.println("Characters whose Frequency is 1 :");
+		Set<Map.Entry<Character, Integer>> data = map.entrySet();
+		for(Map.Entry e :data)
+		{
+			if((int)e.getValue()==1)
+			{
+				System.out.print(e.getKey()+" ");
+			}
+		}
+	}
+}
