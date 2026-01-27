@@ -13,8 +13,8 @@ public class FileWriteExample
         // 1. Access the file using the File class
         File myFile = new File("D:\\java\\Core java\\11.Collection\\File Handling\\Demo\\abc.txt");
 		
-		Writer fr = new FileWriter(myFile,true);
-
+		Writer fr = new FileWriter(myFile, true);
+        // Use try-with-resources to ensure the writer is automatically closed
         BufferedWriter writer = new BufferedWriter(fr);
             
 		// 2. Write data
@@ -24,7 +24,8 @@ public class FileWriteExample
 		writer.newLine(); 
 		
 		System.out.println("Data written successfully.");
-            
+        writer.close();
+		fr.close();
        
     }
 }
